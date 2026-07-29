@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="SlideFlix movie discovery website." />
+
+    <title>SlideFlix</title>
+
+    <link rel="preconnect" href="https://image.tmdb.org" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+
+    <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="#top" data-view="home" aria-label="SlideFlix home">
+            SLIDEFLIX
+        </a>
+
+        <nav class="desktop-nav" aria-label="Main navigation">
+            <a class="active" href="#top" data-view="home">
+                Home
+            </a>
+
+            <a href="#favorites" data-view="favorites">
+                Favorites
+            </a>
+        </nav>
+
+        <button class="profile-button" type="button" aria-label="Open profile menu">
+            JS
+        </button>
+    </header>
+
+    <main id="top">
+        <!-- HERO CAROUSEL -->
+
+        <section class="featured is-loading" aria-label="Featured movie">
+            <article class="slide is-active">
+                <div class="slide__image"></div>
+                <div class="slide__shade"></div>
+
+                <div class="slide__content">
+                    <p class="eyebrow">
+                        Featured movie
+                    </p>
+
+                    <h1></h1>
+
+                    <p class="meta"></p>
+
+                    <p class="description"></p>
+
+                    <div class="hero-actions">
+                        <button class="button button--light" type="button">
+                            <span aria-hidden="true">▶</span>
+                            Play
+                        </button>
+
+                        <button class="button button--glass" type="button">
+                            <span aria-hidden="true">ⓘ</span>
+                            More info
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- MOVIE CATALOG -->
+
+        <section class="catalog" aria-labelledby="catalog-title">
+            <div class="catalog__heading">
+                <p class="eyebrow">
+                    Explore the collection
+                </p>
+
+                <h2 id="catalog-title">
+                    Movies
+                </h2>
+
+                <p>
+                    Browse trending, popular, top-rated,
+                    and upcoming movies.
+                </p>
+            </div>
+
+            <div id="series-rows" class="series-rows" aria-live="polite"></div>
+        </section>
+
+        <!-- FAVORITES PAGE -->
+
+        <section id="favorites" class="favorites-page is-hidden" aria-labelledby="favorites-title">
+            <div class="favorites-page__heading">
+                <p class="eyebrow">
+                    Your collection
+                </p>
+
+                <h2 id="favorites-title">
+                    Favorites
+                </h2>
+
+                <p>
+                    Every movie you favorite will be
+                    saved here.
+                </p>
+            </div>
+
+            <div id="favorites-grid" class="favorites-grid" aria-live="polite"></div>
+        </section>
+    </main>
+    <aside id="movie-preview" class="movie-preview is-hidden" role="dialog" aria-modal="false"
+        aria-labelledby="movie-preview-title">
+        <div class="movie-preview__artwork">
+            <img class="movie-preview__image" src="" alt="" />
+
+            <div class="movie-preview__shade"></div>
+
+            <button class="movie-preview__close" type="button" aria-label="Close movie preview">
+                ×
+            </button>
+        </div>
+
+        <div class="movie-preview__content">
+            <h3 id="movie-preview-title"></h3>
+
+            <p class="movie-preview__meta"></p>
+
+            <p class="movie-preview__description"></p>
+
+            <div class="movie-preview__actions">
+                <button class="movie-preview__play" type="button">
+                    <span aria-hidden="true">▶</span>
+                    Play
+                </button>
+
+                <button class="movie-preview__favorite" type="button" aria-pressed="false">
+                    <span aria-hidden="true">♡</span>
+                    Favorite
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/tmdb-config.js"></script>
+    <script src="js/series-grid.js"></script>
+</body>
+
+</html>
